@@ -24,3 +24,12 @@ Given a `$vpic_run/particle` path, it will generate a `$vpic_run/particle.compre
 After a VPIC run has completed, point this script to generated `particle` directory.
 
 Currently, this only handles the `eparticle` files and ignores the `hparticle` files. You can tweak the code to parse both.
+
+Running a deck
+--------------
+
+- Compile `vpic407` to get a VPIC executable.
+- Run `build/vpic reconnection512.cc` to get an executable (usually called `reconnection.Linux`)
+- `mpirun -h hostfile -n 512 reconnection.Linux`
+- This will start the simulation. All data will be dumped in the directory containing the executable. (I usually just put the executabe in PanFS and run things there)
+- Periodic dumps are collected in `particle/T.ts`
