@@ -33,3 +33,4 @@ Running a deck
 - `mpirun -h hostfile -n 512 reconnection.Linux`
 - This will start the simulation. All data will be dumped in the directory containing the executable. (I usually just put the executabe in PanFS and run things there)
 - Periodic dumps are collected in `particle/T.ts`
+- After the simulation completes, I point the gen_compressed_traces script at the `particle` directory. It creates a `particle.compressed` directory in the same parent, applying an aggregation function to each particle struct, and collecting a log of floats in `particle.compressed`.
